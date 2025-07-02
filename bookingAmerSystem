@@ -1,0 +1,39 @@
+Project Structure for booking_system:
+
+booking_system/
+├── appEndpoints
+├── description_file.txt
+├── error-log.txt
+├── HowToLogOnViaPostman
+├── output.txt
+├── pom.xml
+├── README.md
+├── whatIsNext
+├── bookingAmerSystem   <-- (this file)
+└── src/
+    ├── main/
+    │   ├── java/
+    │   │   └── org/
+    │   │       └── example/
+    │   │           ├── BookingSystem.java
+    │   │           ├── config/
+    │   │           ├── controller/
+    │   │           ├── dto/
+    │   │           ├── model/
+    │   │           ├── repository/
+    │   │           └── service/
+    │   └── resources/
+    │       └── application.properties
+    └── test/
+        └── java/
+            └── org/
+                └── example/
+                    └── controller/
+
+target/
+├── booking_system-1.0-SNAPSHOT.jar
+├── classes/
+├── test-classes/
+└── ...
+
+This structure follows best practices for a layered Spring Boot application, separating configuration, controllers, DTOs, models, repositories, services, and tests.

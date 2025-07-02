@@ -1,0 +1,90 @@
+# How To Log On Via Postman
+
+This guide explains how to use Postman to log in to your Doctor Appointment Booking System (Spring Boot + JWT) and how to use the JWT token to access secured endpoints.
+
+---
+
+## 1. Log In and Get JWT Token
+
+1. **Open Postman**.
+2. **Create a new POST request** to:
+
+   `http://localhost:8080/api/auth/login`
+
+3. **Set the request body** to `raw` and `JSON` format. Example:
+   ```json
+   {
+     "username": "yourUsername",
+     "password": "yourPassword"
+   }
+   ```
+
+4. **Send the request**.
+5. If credentials are correct, you will receive a response like:
+   ```json
+   {
+     "token": "<your_jwt_token_here>"
+   }
+   ```
+
+---
+
+## 2. Use JWT Token for Secured Requests
+
+1. **Copy the token** from the login response (without quotes).
+2. For any secured API request (e.g., creating a patient, booking an appointment):
+   - Go to the request in Postman.
+   - Click the `Authorization` tab.
+   - Set `Type` to `Bearer Token`.
+   - Paste your token in the `Token` field.
+
+   **OR**
+   - Add a header:
+     - Key: `Authorization`
+     - Value: `Bearer <your_jwt_token_here>`
+
+3. **Send your request**. If the token is valid, you will be authorized.
+
+---
+
+## 3. Example: Create a Patient
+
+- **Endpoint:** `POST http://localhost:8080/api/patients`
+- **Headers:**
+  - `Authorization: Bearer <your_jwt_token_here>`
+- **Body (JSON):**
+  ```json
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "dateOfBirth": "1990-01-01",
+    "gender": "Male",
+    "contactNumber": "1234567890",
+    "address": "123 Main St"
+  }
+  ```
+
+---
+
+## 4. Common Issues
+
+- **401 Unauthorized:**
+  - Make sure you include the `Authorization` header with a valid JWT token.
+  - Ensure your token is not expired.
+  - Double-check your login credentials.
+
+- **Registering Users:**
+  - If registration is open, use `POST /api/users` to create a new user (check your API for required fields).
+
+---
+
+## 5. Summary
+
+- Always log in first to get a JWT token.
+- Use the token in the `Authorization` header for all secured endpoints.
+- If you get 401 errors, check your token and credentials.
+
+---
+
+For more details, see your appEndpoints file for all available endpoints.
+

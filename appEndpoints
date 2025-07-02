@@ -1,0 +1,64 @@
+# API Endpoints for Doctor Appointment Booking System
+
+## Authentication & Security
+
+### AuthController (/api/auth)
+- POST   /api/auth/login — Log in and receive a JWT token
+
+### User Registration
+- POST   /api/users — Register a new user (open to all)
+
+### Using JWT Token
+- For all secured endpoints, add the header:
+  - Authorization: Bearer &lt;your_jwt_token&gt;
+
+---
+
+## UserController (/api/users)
+- GET    /api/users
+- GET    /api/users/{id}
+- POST   /api/users
+- PUT    /api/users/{id}
+- DELETE /api/users/{id}
+
+## PatientController (/api/patients)
+- GET    /api/patients
+- GET    /api/patients/{id}
+- POST   /api/patients
+- PUT    /api/patients/{id}
+- DELETE /api/patients/{id}
+
+## AppointmentController (/api/appointments)
+- GET    /api/appointments
+- GET    /api/appointments/{id}
+- POST   /api/appointments
+- PUT    /api/appointments/{id}
+- DELETE /api/appointments/{id}
+
+## RoleController (/api/roles)
+- GET    /api/roles
+- GET    /api/roles/{id}
+- POST   /api/roles
+- PUT    /api/roles/{id}
+- DELETE /api/roles/{id}
+
+## ReportController (/api/reports)
+- GET    /api/reports
+- GET    /api/reports/{id}
+- POST   /api/reports
+- PUT    /api/reports/{id}
+- DELETE /api/reports/{id}
+
+## AuditLogController (/api/audit-logs)
+- GET    /api/audit-logs
+- GET    /api/audit-logs/{id}
+- POST   /api/audit-logs
+- PUT    /api/audit-logs/{id}
+- DELETE /api/audit-logs/{id}
+
+## NotificationController (/api/notifications)
+- GET    /api/notifications
+- GET    /api/notifications/{id}
+- POST   /api/notifications
+- PUT    /api/notifications/{id}
+- DELETE /api/notifications/{id}
